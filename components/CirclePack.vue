@@ -1,13 +1,13 @@
 <template lang="html">
-  <svg :width="width" :height="height" :transform="translateSVG">
+  <svg :width="width" :height="height" :transform="transformSVG">
     <text
       x="50%"
-      :transform="translateTitle"
+      :transform="transformTitle"
       text-anchor="middle"
       class="circle-label">
       {{ title }}
     </text>
-    <g opacity="0.85" :transform="translateCircles">
+    <g opacity="0.85" :transform="transformCircles">
       <circle
         v-for="d in descendants"
         :fill="color(d.data.name.replace(/ .*/, ''))"
@@ -58,9 +58,9 @@ export default {
     'padding',
     'width',
     'title',
-    'translateSVG',
-    'translateCircles',
-    'translateTitle'
+    'transformSVG',
+    'transformCircles',
+    'transformTitle'
   ]
 
 }
