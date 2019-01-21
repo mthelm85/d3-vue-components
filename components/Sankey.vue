@@ -85,7 +85,7 @@ export default {
       return Math.abs(x1 - x0)
     },
     textTransform (n) {
-      return n === 0 ? `translate(${labelTranslateX}, ${labelTranslateY})' : 'translate(-${labelTranslateX}, ${labelTranslateY})`
+      return n === 0 ? `translate(${labelTranslateX}, ${labelTranslateY})` : `translate(-${labelTranslateX}, ${labelTranslateY})`
     }
   },
 
