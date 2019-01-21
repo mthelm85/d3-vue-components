@@ -71,11 +71,11 @@ export default {
   methods: {
     nodeTextClass (n) {
       switch (n.depth) {
-        case 0: return depth0Style
-        case 1: return depth1Style
-        case 2: return depth2Style
-        case 3: return depth3Style
-        default: return depth1Style
+        case 0: return this.depth0Style
+        case 1: return this.depth1Style
+        case 2: return this.depth2Style
+        case 3: return this.depth3Style
+        default: return this.depth1Style
       }
     },
     rectHeight (y1, y0) {
@@ -85,7 +85,7 @@ export default {
       return Math.abs(x1 - x0)
     },
     textTransform (n) {
-      return n === 0 ? `translate(${labelTranslateX}, ${labelTranslateY})` : `translate(-${labelTranslateX}, ${labelTranslateY})`
+      return n === 0 ? `translate(${this.labelTranslateX}, ${this.labelTranslateY})` : `translate(-${this.labelTranslateX}, ${this.labelTranslateY})`
     }
   },
 
