@@ -4,7 +4,7 @@
       x="50%"
       :transform="transformTitle"
       text-anchor="middle"
-      class="circle-label">
+      style="style">
       {{ title }}
     </text>
     <g opacity="0.85" :transform="transformCircles">
@@ -57,6 +57,7 @@ export default {
     'height',
     'padding',
     'width',
+    'style',
     'title',
     'transformSVG',
     'transformCircles',
@@ -67,7 +68,4 @@ export default {
 </script>
 
 <style lang="css">
-.circle-label {
-  font: 22px sans-serif;
-}
 </style>
