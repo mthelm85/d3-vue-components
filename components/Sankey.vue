@@ -89,7 +89,7 @@ export default {
     }
   },
 
-  mounted () {
+  created () {
     this.sankey(this.data)
   },
 
