@@ -1,6 +1,6 @@
 {
   "name": "d3-vue-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Vue.js plugin that allows for the simple creation of d3.js visualizations.",
   "main": "index.js",
   "scripts": {
