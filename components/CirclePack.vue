@@ -16,7 +16,7 @@
         :r="d.r"
         stroke="black">
         <title>
-          <text>{{ d.data.name }}: ${{ d.value.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</text>
+          <text>{{ d.data.name }}: {{ valueFormatted(d) }}</text>
         </title>
       </circle>
     </g>
@@ -45,6 +45,17 @@ export default {
     }
   },
 
+  methods: {
+    valueFormatted (d) {
+      switch (this.numberFormat) {
+        case 'currency': return '$' + d.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        case 'float': return d.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        case 'integer': return Math.round(d.value).toLocaleString()
+        default: return d.value
+      }
+    }
+  },
+
   mounted () {
     this.root = d3.hierarchy(this.data)
       .sum(d => d.value)
@@ -61,7 +72,8 @@ export default {
     'title',
     'transformSVG',
     'transformCircles',
-    'transformTitle'
+    'transformTitle',
+    'numberFormat'
   ]
 
 }

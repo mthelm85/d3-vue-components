@@ -2,7 +2,7 @@
 
 d3-vue-components is a Vue.js plugin that will allow you to easily add d3-based visualizations to your Vue.js app.
 
-This is a project that I'm slowly working on as I have time, so this package is very incomplete. Right now it only supports two visualizations (circle pack and sankey) and all units are displayed in U.S. dollars. Feel free to submit pull requests to help out!
+This is a project that I'm slowly working on as I have time, so this package is very incomplete. Right now it only supports two visualizations, Circle Pack and Sankey. Feel free to submit pull requests to help out!
 
 ## Installation
 
@@ -51,6 +51,7 @@ Below you can see how you might implement the diagram for this JSON object:
 <template lang="html">
   <Sankey
     :data="data"
+    numberFormat="currency" // options are: currency, float, or integer.
     height="1200"
     width="1200"
     depth0Style="font: 18px sans-serif" // set the style for top-tier node labels
@@ -118,6 +119,7 @@ Below you can see how you might implement the diagram for this JSON object:
 <template lang="html">
   <CirclePack
     :data="data"
+    numberFormat="currency" // options are: currency, float, or integer.
     height="900"
     width="900"
     padding="3"

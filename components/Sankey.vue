@@ -22,7 +22,7 @@
           :stroke-width="Math.max(1, l.width)"
           class="sankey-link">
           <title>
-            <text>${{ l.value.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</text>
+            <text>{{ valueFormatted(l) }}</text>
           </title>
         </path>
         <linearGradient
@@ -86,6 +86,14 @@ export default {
     },
     textTransform (n) {
       return n === 0 ? `translate(${this.labelTranslateX}, ${this.labelTranslateY})` : `translate(-${this.labelTranslateX}, ${this.labelTranslateY})`
+    },
+    valueFormatted (d) {
+      switch (this.numberFormat) {
+        case 'currency': return '$' + d.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        case 'float': return d.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        case 'integer': return Math.round(d.value).toLocaleString()
+        default: return d.value
+      }
     }
   },
 
@@ -103,7 +111,8 @@ export default {
     'depth3Style',
     'transformSVG',
     'labelTranslateX',
-    'labelTranslateY'
+    'labelTranslateY',
+    'numberFormat'
   ]
 }
 </script>

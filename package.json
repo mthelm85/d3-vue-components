@@ -3,6 +3,10 @@
   "version": "1.0.11",
   "description": "A Vue.js plugin that allows for the simple creation of d3.js visualizations.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mthelm85/d3-vue-components"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
