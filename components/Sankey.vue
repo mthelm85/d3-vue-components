@@ -10,7 +10,7 @@
           :key="n.name"
           :height="n.y1- n.y0"
           :width="n.x1 - n.x0"
-          :fill="color(n.name.replace(/ .*/, ''))">
+          :fill="color(n.name)">
         </rect>
       </g>
       <g fill="none" stroke-opacity="0.5">
@@ -29,8 +29,8 @@
           v-for="l in data.links"
           :id="l.index"
           :key="l.source.name + l.target.name">
-          <stop offset="0%" :stop-color="color(l.source.name.replace(/ .*/, ''))"></stop>
-          <stop offset="100%" :stop-color="color(l.target.name.replace(/ .*/, ''))"></stop>
+          <stop offset="0%" :stop-color="color(l.source.name)"></stop>
+          <stop offset="100%" :stop-color="color(l.target.name)"></stop>
         </linearGradient>
       </g>
       <g>
