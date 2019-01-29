@@ -27,7 +27,7 @@
           :y="countDay(v.date) * cellSize + 0.5"
           :fill="color(v.value)">
           <title>
-            <text>{{ v.date }}: {{ valueFormatted(v.value) }}</text>
+            <text>{{ v.date }}: {{ valueFormatted(v) }}</text>
           </title>
         </rect>
       </g>
@@ -132,5 +132,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped lang="css">
+text {
+  font: 10px sans-serif;
+}
 </style>
