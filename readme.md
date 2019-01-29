@@ -5,7 +5,7 @@ d3-vue-components is a Vue.js plugin that will allow you to easily add d3-based 
 This is a project that I'm slowly working on as I have time, so this package is very incomplete. Right now it only supports the following visualizations:
 
 - [Sankey](#sankey-diagram)
-- [Circle Pack](#circle-pack)
+- [Circle Pack](#circle-pack-diagram)
 - [Calendar (Waffle)](#calendar)
 
 Feel free to submit pull requests to help out!
