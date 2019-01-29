@@ -2,7 +2,13 @@
 
 d3-vue-components is a Vue.js plugin that will allow you to easily add d3-based visualizations to your Vue.js app.
 
-This is a project that I'm slowly working on as I have time, so this package is very incomplete. Right now it only supports two visualizations, Circle Pack and Sankey. Feel free to submit pull requests to help out!
+This is a project that I'm slowly working on as I have time, so this package is very incomplete. Right now it only supports the following visualizations:
+
+- [Sankey](#sankey-diagram)
+- [Circle Pack](#circle-pack)
+- [Calendar (Waffle)](#calendar)
+
+Feel free to submit pull requests to help out!
 
 ## Installation
 
@@ -129,6 +135,41 @@ Below you can see how you might implement the diagram for this JSON object:
     transformCircles="translate(0, -10)"
     transformTitle="translate(0, 20)">
   </CirclePack>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        data: require('@/assets/somedata.json')
+      }
+    }
+  }
+</script>
+```
+
+#### Calendar
+
+This fixed-size diagram expects you to feed it a JSON object in the following format:
+
+```javascript
+[
+  { "date": "2019-01-01", "value": 17 },
+  { "date": "2019-01-02", "value": 9 },
+  { "date": "2019-01-03", "value": 34 },
+  { "date": "2019-01-04", "value": 22 },
+  // ...and so on
+]
+```
+
+Below you can see how you might implement the diagram for this JSON object:
+
+```javascript
+<template lang="html">
+  <Calendar
+    :data="data"
+    numberFormat="currency" // options are: currency, float, or integer.>
+  </Calendar>
 </template>
 
 <script>
